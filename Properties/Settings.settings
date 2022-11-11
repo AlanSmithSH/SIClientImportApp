@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SIClientImport.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TestOrProd" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Test</Value>
+    </Setting>
+    <Setting Name="TestConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=localhost/serer Ip;Initial Catalog = YourDatabaseName;uid =sa;pwd = YourPassword";</Value>
+    </Setting>
+    <Setting Name="ProdConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=localhost/serer Ip;Initial Catalog = YourDatabaseName;uid =sa;pwd = YourPassword";</Value>
+    </Setting>
+    <Setting Name="DefaultFileLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

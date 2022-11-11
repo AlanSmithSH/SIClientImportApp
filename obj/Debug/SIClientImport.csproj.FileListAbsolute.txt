@@ -1,0 +1,11 @@
+C:\Users\s01246\source\repos\SIClientImport\SIClientImport\bin\Debug\SIClientImport.exe.config
+C:\Users\s01246\source\repos\SIClientImport\SIClientImport\bin\Debug\SIClientImport.exe
+C:\Users\s01246\source\repos\SIClientImport\SIClientImport\bin\Debug\SIClientImport.pdb
+C:\Users\s01246\source\repos\SIClientImport\SIClientImport\obj\Debug\SIClientImport.csproj.AssemblyReference.cache
+C:\Users\s01246\source\repos\SIClientImport\SIClientImport\obj\Debug\SIClientImport.Form1.resources
+C:\Users\s01246\source\repos\SIClientImport\SIClientImport\obj\Debug\SIClientImport.Properties.Resources.resources
+C:\Users\s01246\source\repos\SIClientImport\SIClientImport\obj\Debug\SIClientImport.csproj.GenerateResource.cache
+C:\Users\s01246\source\repos\SIClientImport\SIClientImport\obj\Debug\SIClientImport.csproj.CoreCompileInputs.cache
+C:\Users\s01246\source\repos\SIClientImport\SIClientImport\obj\Debug\SIClientImport.exe
+C:\Users\s01246\source\repos\SIClientImport\SIClientImport\obj\Debug\SIClientImport.pdb
+C:\Users\s01246\source\repos\SIClientImport\SIClientImport\obj\Debug\SIClientImport.csproj.ResolveComReference.cache
