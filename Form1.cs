@@ -14,9 +14,10 @@ namespace SIClientImport
 {
     public partial class Form1 : Form
     {
-        public DataTable dtGoodData;
-        public DataTable dtBadData;
+        public static DataTable dtGoodData;
+        public static DataTable dtBadData;
         public DataTable dtRawSpreadsheet;
+        public bool dataAcceptable;
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace SIClientImport
         private void Form1_Load(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            ResetScreen();
         }
 
 
@@ -48,6 +50,8 @@ namespace SIClientImport
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             txtFilename.Text = openFileDialog1.FileName;
+            lblLoadType.Visible = true;
+            cboLoadType.Visible = true;
         }
 
         public void btnValidate_Click(object sender, EventArgs e)
@@ -57,15 +61,26 @@ namespace SIClientImport
                 MessageBox.Show("Please select a file and load type to validate.");
             }
 
+            lblWait.Visible = true;
             dtRawSpreadsheet = ReadSpreadsheet(txtFilename.Text);
+            dtGoodData = dtRawSpreadsheet.Clone();
+            dtBadData = dtRawSpreadsheet.Clone();
+
             string load = cboLoadType.Text;
+            
             switch (load)
             {
                 case "Claim":
+                    Claim cl = new Claim();
+                    cl.ValidateClaim(dtRawSpreadsheet);
                     break;
                 case "Address Book":
+                    AddressBook ab = new AddressBook();
+                    ab.ValidateAddressBook(dtRawSpreadsheet);
                     break;
                 case "Claimant":
+                    Claimant claimant = new Claimant();
+                    claimant.ValidateClaimant(dtRawSpreadsheet);
                     break;
                 case "Employment":
                     break;
@@ -87,7 +102,30 @@ namespace SIClientImport
             }
 
 
-            dgvPreview.DataSource = dtRawSpreadsheet;
+            dgvPreview.DataSource = dtGoodData;
+            dgvErrors.DataSource = dtBadData;
+
+            dgvPreview.Visible = true;
+            lblPreview.Visible = true;
+
+            if (dgvPreview.RowCount > 1 && dgvErrors.RowCount < 2)
+            {
+                btnLoad.Visible = true;
+            }
+            
+            if (dgvErrors.RowCount>1)
+            {
+                dgvErrors.Visible = true;
+                lblError.Visible = true;
+                btnLoad.Visible = false;
+            }
+            else
+            {
+                dgvErrors.Visible = false;
+                lblError.Visible = false;
+            }
+            lblWait.Visible = false;
+
         }
 
         public DataTable ReadSpreadsheet(string filename) 
@@ -135,6 +173,39 @@ namespace SIClientImport
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cboLoadType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboLoadType.Text == "Claim")
+            {
+                lblPolicyNumber.Visible = true;
+                txtPolicyNumber.Visible = true;
+            }
+
+            btnValidate.Visible = true;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ResetScreen();
+        }
+
+        private void ResetScreen()
+        {
+            txtFilename.Text = "";
+            dgvErrors.Visible = false;
+            lblError.Visible = false;
+            lblLoadType.Visible = false;
+            cboLoadType.Text = "";
+            cboLoadType.Visible = false;
+            dgvPreview.Visible = false;
+            lblPreview.Visible = false;
+            btnValidate.Visible = false;
+            lblPolicyNumber.Visible = false;
+            txtPolicyNumber.Visible = false;
+            btnLoad.Visible = false;
+            lblWait.Visible = false;
         }
     }
 }
