@@ -6,13 +6,16 @@
       <Value Profile="(Default)">Test</Value>
     </Setting>
     <Setting Name="TestConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=localhost/serer Ip;Initial Catalog = YourDatabaseName;uid =sa;pwd = YourPassword";</Value>
+      <Value Profile="(Default)">Data Source=cindsv91002\SimsTst;Initial Catalog=Sims;User ID=SVCL_SIMS_SQL_JRE;Password=SimsTstPW;persist security info=False</Value>
     </Setting>
     <Setting Name="ProdConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=localhost/serer Ip;Initial Catalog = YourDatabaseName;uid =sa;pwd = YourPassword";</Value>
+      <Value Profile="(Default)">data source=DCTASV21001;initial catalog=SI;User ID=dotnetuser;Password=471$$WeSt;persist security info=False</Value>
     </Setting>
     <Setting Name="DefaultFileLocation" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LocalConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">data source=(local);initial catalog=SI;User ID=dotnetuser;Password=471$$WeSt;persist security info=False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -37,8 +37,8 @@ namespace SIClientImport.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost/serer Ip;Initial Catalog = YourDatabaseName;uid =sa;pwd = Y" +
-            "ourPassword\";")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=cindsv91002\\SimsTst;Initial Catalog=Sims;User ID=SVCL_SIMS_SQL_JRE;Pa" +
+            "ssword=SimsTstPW;persist security info=False")]
         public string TestConnectionString {
             get {
                 return ((string)(this["TestConnectionString"]));
@@ -50,8 +50,8 @@ namespace SIClientImport.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost/serer Ip;Initial Catalog = YourDatabaseName;uid =sa;pwd = Y" +
-            "ourPassword\";")]
+        [global::System.Configuration.DefaultSettingValueAttribute("data source=DCTASV21001;initial catalog=SI;User ID=dotnetuser;Password=471$$WeSt;" +
+            "persist security info=False")]
         public string ProdConnectionString {
             get {
                 return ((string)(this["ProdConnectionString"]));
@@ -70,6 +70,19 @@ namespace SIClientImport.Properties {
             }
             set {
                 this["DefaultFileLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("data source=(local);initial catalog=SI;User ID=dotnetuser;Password=471$$WeSt;pers" +
+            "ist security info=False")]
+        public string LocalConnectionString {
+            get {
+                return ((string)(this["LocalConnectionString"]));
+            }
+            set {
+                this["LocalConnectionString"] = value;
             }
         }
     }
